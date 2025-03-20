@@ -16,6 +16,7 @@ function AllPlayers() {
         setError(null);
       } catch (E) {
         setError("Failed to load players. Please try again later.");
+        console.error("Error fetching players: ", E);
       } finally {
         setLoading(false);
       }
@@ -29,12 +30,9 @@ function AllPlayers() {
   }
 
   if (error) {
-    return <div className={error}>{error}</div>;
+    return <div className={style.error}>{error}</div>;
   }
 
-  /**
-   * name, status, image
-   */
   return (
     <div className={style.container}>
       <div className={style.header}>

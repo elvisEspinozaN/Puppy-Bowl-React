@@ -1,19 +1,21 @@
 import React from "react";
-import styles from "../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
+import styles from "../styles/NavBar.module.css";
 
 function NavBar() {
   return (
-    <nav>
-      <h1>Puppy Bowl</h1>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/new-player">New Player</Link>
-        </li>
-      </ul>
+    <nav className={styles.nav}>
+      <Link to="/" className={styles.logo}>
+        Puppy Bowl
+      </Link>
+      <div className={styles.links}>
+        <Link to="/" className={styles.link}>
+          Home
+        </Link>
+        <Link to="/new-player" className={styles.link}>
+          Add Player
+        </Link>
+      </div>
     </nav>
   );
 }
